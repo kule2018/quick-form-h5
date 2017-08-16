@@ -5,14 +5,18 @@
     </div>
     <div class="title">
       <h3>TNFE-CLI</h3>
-      <p>一个可以支持突发事件的快速h5模版</p>
+      <p>一个支持突发事件的快速H5模版</p>
     </div>
     <div class="btns">
-      <mt-button type="default">default</mt-button>
-      <mt-button type="primary" class="search">下一页</mt-button>
-      <mt-button class="more-news"><a href="//github.com/Tnfe">关于我们</a></mt-button>
+      <router-link to="/form">
+        <div class="btn btn-primary">快速上手</div>
+      </router-link>
+      <div class="btn btn-dashed"><a href="//github.com/Tnfe">关于我们</a></div>
       <div class="tip">
-          点击下一页代表同意<mt-button type="text" class="tips">《TNFE-CLI用户协议》</mt-button>
+        点击"快速上手"代表同意
+        <router-link to="/about">
+          <span class="tips">《TNFE-CLI用户协议》</span>
+        </router-link>
       </div>
     </div>
     <div class="tlogo">
@@ -36,18 +40,19 @@ export default {
 .hello {
   width: 100%;
   height: 100%;
+  padding: 0;
+  margin: 0;
 }
 .top {
-  margin: 1.5rem  auto;
   text-align: center;
 }
 .top img {
+    margin: 1.5rem  auto;
     width:5.352rem;
 }
 .title {
-    margin: 2rem  auto;
+    margin: 2rem  auto 0;
     text-align: center;
-    font-family: "Lucida Grande"
 }
 .title h3 {
     font-size: 1.8rem;
@@ -57,7 +62,7 @@ export default {
     font-size: 0.7rem;
 }
 .btns{
-    margin-top: 2rem;
+    margin-top: 3rem;
     width:100%;
 }
 
@@ -69,9 +74,7 @@ export default {
     margin-top: 0.3rem;
     text-align: center;
     line-height: 1rem;
-    
     font-size: 0.45rem;
-    
     z-index: 999;
     position: relative;
     height: 1rem;
@@ -81,14 +84,13 @@ export default {
     text-decoration:underline;
 }
 .tlogo{
-    bottom: 3rem;
+    bottom: 1rem;
     position: absolute;
     float: left;
     left: 50%;
     margin-left: -3rem;
     width: 6rem;
     display: flex;
-    opacity: 0;
 }
 .tlogo img {
     width:6rem;
