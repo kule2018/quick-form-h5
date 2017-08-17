@@ -5,6 +5,8 @@ import App from './App';
 import router from './router';
 import Adapter from './utils/adapter';
 
+import '@/styles/global.css';
+
 Vue.prototype.$axios = axios;
 
 //兼容pc
