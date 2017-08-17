@@ -14,7 +14,6 @@ import Share from './utils/share';
 
 
 import '@/styles/global.css';
-import '@/styles/animate.css';
 
 Vue.prototype.$axios = axios;
 Vue.use(VeeValidate);

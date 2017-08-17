@@ -10,7 +10,7 @@ import { AniX } from 'anix';
 
 export default class Animate {
 
-  //向上拉
+  //向上拉----------------------------------------------------------------
   static pullUp = {
     enter(el, done) {
       AniX.fromTo(el, .75,
@@ -23,7 +23,7 @@ export default class Animate {
     }
   }
 
-  //缩放
+  //缩放----------------------------------------------------------------
   static scale = {
     enter(el, done) {
       AniX.fromTo(el, .5,
@@ -36,7 +36,7 @@ export default class Animate {
     }
   }
 
-  //选转
+  //选转----------------------------------------------------------------
   static rotate = {
     enter(el, done) {
       AniX.fromTo(el, .5,
@@ -45,20 +45,40 @@ export default class Animate {
     },
 
     leave(el, done) {
-      AniX.to(el, .5, AniX.get({ scale: 0.3, y: -500,rotate: -90, normal: { opacity: 0, onComplete: done } }));
+      AniX.to(el, .5, AniX.get({ scale: 0.3, y: -500, rotate: -90, normal: { opacity: 0, onComplete: done } }));
     }
   }
 
-  //自定义 随便改
+  //自定义 随便改----------------------------------------------------------------
   static custom = {
     enter(el, done) {
       AniX.fromTo(el, .5,
         AniX.get({ scale: 0.3, y: 500, z: 1, normal: { opacity: 0 } }),
-        AniX.get({ scale: 1, y: 0,  z: 0, normal: { opacity: 1, onComplete: done } }));
+        AniX.get({ scale: 1, y: 0, z: 0, normal: { opacity: 1, onComplete: done } }));
     },
 
     leave(el, done) {
       AniX.to(el, .5, AniX.get({ scale: 0.3, y: -500, normal: { opacity: 0, onComplete: done } }));
+    }
+  }
+
+  //没有任何动画----------------------------------------------------------------
+  static none = {
+    enter(el, done) {
+      done();
+    },
+
+    leave(el, done) {
+      done();
+    }
+  }
+
+  //安卓无动画兼容
+  static adapter(animate) {
+    if (ppo.isIos()) {
+      return typeof animate == 'string' ? this[animate] : animate;
+    } else {
+      return this.none;
     }
   }
 

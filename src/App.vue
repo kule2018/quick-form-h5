@@ -22,11 +22,11 @@
       }
     },
 
-    //各种动画方式
+    //各种动画方式: 使用Animate.adapter（安卓兼容模式）
     //methods: Animate.pullUp
     //methods: Animate.scale
     //methods: Animate.rotate
-    methods: Animate.custom
+    methods: Animate.adapter('custom')
   };
 </script>
 
