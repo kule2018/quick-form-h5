@@ -2,16 +2,14 @@ import Vue from 'vue';
 
 import VeeValidate from 'vee-validate';
 
-import '@/assets/form.css';
+import '@/styles/form.css';
+import '@/styles/global.css';
 
 import axios from 'axios';
 
 import App from './App';
 import router from './router';
 import Adapter from './utils/adapter';
-
-import '@/styles/global.css';
-
 
 Vue.prototype.$axios = axios;
 Vue.use(VeeValidate);
