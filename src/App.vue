@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <transition
-    v-on:enter="enter"
-		v-on:leave="leave"
-		v-bind:css="false"
-    >
+    <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false">
       <router-view class="page"></router-view>
     </transition>
   </div>
@@ -13,13 +9,10 @@
 
 <script>
   import Animate from '@/utils/animate';
-
   export default {
     name: 'app',
-
     data() {
-      return {
-      }
+      return {}
     },
 
     //各种动画方式: 使用Animate.adapter（安卓兼容模式）
@@ -31,9 +24,9 @@
 </script>
 
 <style>
-.page {
- position: absolute;
- top:0;
- left:0;
-}
+  .page {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 </style>

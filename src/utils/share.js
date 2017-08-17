@@ -1,5 +1,5 @@
 /**
- * 这个文件用来设置分享／上报
+ * 这个Class用来设置分享／上报
  *
  * Share.init();
  * Share.share({
