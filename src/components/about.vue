@@ -24,20 +24,23 @@ export default {
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  overflow: auto;
 }
-.title{
+
+.title {
   text-align: center;
   margin: 2rem auto;
   font-size: 1rem;
 }
+
 p {
   font-size: 0.60rem;
   margin: 1.49rem 1.49rem;
   line-height: 1.02rem;
   text-align: left;
 }
+
 .btn-close {
-  margin: 4rem auto .4rem auto;
+  margin: 2rem auto 1rem auto;
 }
 </style>

@@ -11,7 +11,9 @@
       <router-link to="/form">
         <div class="btn btn-primary">快速上手</div>
       </router-link>
-      <div class="btn btn-dashed"><a href="//github.com/Tnfe">关于我们</a></div>
+      <div class="btn btn-dashed">
+        <a href="//github.com/Tnfe">关于我们</a>
+      </div>
       <div class="tip">
         点击"快速上手"代表同意
         <router-link to="/about">
@@ -43,58 +45,63 @@ export default {
   padding: 0;
   margin: 0;
 }
+
 .top {
   text-align: center;
 }
+
 .top img {
-    margin: 1.5rem  auto;
-    width:5.352rem;
+  margin: 1.5rem auto;
+  width: 5.352rem;
 }
+
 .title {
-    margin: 2rem  auto 0;
-    text-align: center;
+  margin: 2rem auto 0;
+  text-align: center;
 }
+
 .title h3 {
-    font-size: 1.8rem;
-    color: #108ee9;
+  font-size: 1.8rem;
+  color: #108ee9;
 }
+
 .title p {
-    font-size: 0.7rem;
-}
-.btns{
-    margin-top: 3rem;
-    width:100%;
+  font-size: 0.7rem;
 }
 
-.btns .btn{
-    margin: 0 auto .4rem auto;
+.btns {
+  margin-top: 3rem;
+  width: 100%;
 }
 
-.tip{
-    margin-top: 0.3rem;
-    text-align: center;
-    line-height: 1rem;
-    font-size: 0.45rem;
-    z-index: 999;
-    position: relative;
-    height: 1rem;
+.btns .btn {
+  margin: 0 auto .4rem auto;
 }
-.tips{
-    color: #108ee9;
-    text-decoration:underline;
+
+.tip {
+  margin-top: 0.3rem;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.45rem;
+  z-index: 999;
+  position: relative;
+  height: 1rem;
 }
-.tlogo{
-    bottom: 1rem;
-    position: absolute;
-    float: left;
-    left: 50%;
-    margin-left: -3rem;
-    width: 6rem;
-    display: flex;
+
+.tips {
+  color: #108ee9;
+  text-decoration: underline;
 }
+
+.tlogo {
+  margin: 2rem auto 1rem;
+  width: 6rem;
+  display: flex;
+}
+
 .tlogo img {
-    width:6rem;
-    height: 0.77rem;
-    margin: 0;
+  width: 6rem;
+  height: 0.77rem;
+  margin: 0;
 }
 </style>
