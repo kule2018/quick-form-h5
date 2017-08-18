@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 import hello from '@/components/hello';
 import about from '@/components/about';
-import button from '@/components/button';
+import button from '@/components/common/button';
 import form from '@/components/form';
 import upload from '@/components/upload';
 import share from '@/components/share';

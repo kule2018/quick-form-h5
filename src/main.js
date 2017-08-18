@@ -4,6 +4,7 @@ import VeeValidate from 'vee-validate';
 
 import '@/styles/form.css';
 import '@/styles/global.css';
+import 'font-awesome/css/font-awesome.css';
 
 import axios from 'axios';
 

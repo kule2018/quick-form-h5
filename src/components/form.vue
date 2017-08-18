@@ -4,7 +4,7 @@
       Form表单
     </div>
     <div class="info">
-      <label class="label">邮箱：</label>
+      <label class="label"><span class="requiredSingle">*</span>邮箱：</label>
       <p class="control has-icon has-icon-right">
         <input name="email" v-model="email" v-validate.initial="'required|email'" :class="{'input': true, 'is-danger': errors.has('email') }" type="text" placeholder="Email">
         <i v-show="errors.has('email')" class="fa fa-warning"></i>

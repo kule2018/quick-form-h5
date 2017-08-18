@@ -4,7 +4,7 @@
       <img src="../assets/tnfe.png" />
     </div>
     <div class="title">
-      <h3>TNFE-CLI</h3>
+      <h3>Quick Form H5</h3>
       <p>一个支持突发事件的快速H5模版</p>
     </div>
     <div class="btns">
@@ -17,7 +17,7 @@
       <div class="tip">
         点击"快速上手"代表同意
         <router-link to="/about">
-          <span class="tips">《TNFE-CLI用户协议》</span>
+          <span class="tips">《Quick Form H5用户协议》</span>
         </router-link>
       </div>
     </div>
