@@ -39,7 +39,7 @@ export default class Share {
     this.pv();
   }
 
-  static share(config) {
+  static setShare(config) {
     XQQ.setShare(config);
   }
 
