@@ -37,6 +37,7 @@
 
         this.name = res.data.name;
         this.show = true;
+
         Share.setShare({
           title: res.data.title,
           message: res.data.message,
