@@ -13,6 +13,9 @@ import router from './router';
 import Adapter from './utils/adapter';
 import Share from './utils/share';
 
+
+import '@/styles/global.css';
+
 Vue.prototype.$axios = axios;
 Vue.use(VeeValidate);
 

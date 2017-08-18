@@ -11,35 +11,32 @@
 </template>
 
 <script>
-export default {
-  name: 'about',
-};
+  export default {
+    name: 'about',
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.about {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: auto;
-}
-
-.title {
-  text-align: center;
-  margin: 2rem auto;
-  font-size: 1rem;
-}
-
-p {
-  font-size: 0.60rem;
-  margin: 1.49rem 1.49rem;
-  line-height: 1.02rem;
-  text-align: left;
-}
-
-.btn-close {
-  margin: 2rem auto 1rem auto;
-}
+  .about {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+  }
+  .title {
+    text-align: center;
+    margin: 2rem auto;
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.60rem;
+    margin: 1.49rem 1.49rem;
+    line-height: 1.02rem;
+    text-align: left;
+  }
+  .btn-close {
+    margin: 2rem auto 1rem auto;
+  }
 </style>

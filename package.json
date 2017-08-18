@@ -11,6 +11,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "anix": "^0.2.3",
     "axios": "^0.16.2",
     "font-awesome": "^4.7.0",
     "ppo.xhtml": "^0.1.3",
