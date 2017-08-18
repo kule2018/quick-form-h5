@@ -6,7 +6,7 @@ import about from '@/components/about';
 import button from '@/components/button';
 import form from '@/components/form';
 import upload from '@/components/upload';
-import share from '@/components/share';
+import share from '@/pages/share';
 
 Vue.use(Router);
 
@@ -18,6 +18,6 @@ export default new Router({
     { path: '/button', name: 'button', component: button },
     { path: '/form', name: 'form', component: form },
     { path: '/upload', name: 'upload', component: upload },
-    { path: '/share', name: 'share', component: share },
+    { path: '/share/:id', name: 'share', component: share, props: true },
   ],
 });
