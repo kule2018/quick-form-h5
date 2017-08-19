@@ -36,11 +36,10 @@ export default class Share {
 
     //添加多个上报地址
     XQQ.addBOSSURL("http://btrace.qq.com/kvcollect");
-
     this.pv();
   }
 
-  static share(config) {
+  static setShare(config) {
     XQQ.setShare(config);
   }
 

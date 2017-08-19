@@ -19,7 +19,9 @@
     //methods: Animate.pullUp
     //methods: Animate.scale
     //methods: Animate.rotate
-    methods: Animate.adapter('custom')
+    //methods: Animate.adapter('custom')
+    //methods: Animate.adapter('custom')
+    methods: Animate.adapter('scale')
   };
 </script>
 
