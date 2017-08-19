@@ -15,7 +15,7 @@
         <a href="//github.com/Tnfe">关于我们</a>
       </div>
 
-      <btn :text="'你好'" :color="'#ff0000'"></btn>
+      <btn :color="'#ff0000'">你好</btn>
 
       <div class="tip">
         点击"快速上手"代表同意

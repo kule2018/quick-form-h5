@@ -1,6 +1,6 @@
 <template>
   <div class="btn" v-bind:style="{ backgroundColor: color }">
-    {{text}}
+    <slot></slot>
   </div>
 </template>
 
