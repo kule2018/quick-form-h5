@@ -1,27 +1,27 @@
 <template>
   <div class="form">
     <div class="top">
-      Form表单
+      calender
     </div>
     <div class="info">
-      <label class="label"><span class="requiredSingle">*</span>邮箱：</label>
+      <label class="label"><span class="requiredSingle">*</span>电话：</label>
       <p class="control has-icon has-icon-right">
-        <input name="email" v-model="email" v-validate.initial="'required|email'" :class="{'input': true, 'is-danger': errors.has('email') }" type="text" placeholder="Email">
-        <i v-show="errors.has('email')" class="fa fa-warning"></i>
-        <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
+        <input name="phone" v-model="phone" :class="{'input': true, 'is-danger': true }" type="text" placeholder="必填">
+        <i v-show="true" class="fa fa-warning"></i>
+        <span v-show="true" class="help is-danger">{{ 'sss' }}</span>
       </p>
     </div>
-    <div class="btn">发布</div>
+    <router-link to="/form">
+      <div class="btn btn-primary bottomBtn">返回</div>
+    </router-link>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'form',
+    name: 'calender',
     data: () => ({
-      email: '',
-      first_name: '',
-      last_name: '',
+      phone: '',
     }),
     computed: {
       name() {
@@ -48,5 +48,13 @@
   .info {
     width: 90%;
     margin: 0.43rem auto;
+  }
+  .label {
+    font-size: 0.8rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  p {
+    margin: 0.5rem 0;
+    width: 90%;
   }
 </style>

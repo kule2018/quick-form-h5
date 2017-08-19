@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
-
+    share
+    <router-link to="/hello">
+      <div class="btn">下一页</div>
+    </router-link>
   </div>
 </template>
 

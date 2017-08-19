@@ -1,7 +1,5 @@
 import Vue from 'vue';
 
-import VeeValidate from 'vee-validate';
-
 import '@/styles/form.css';
 import '@/styles/global.css';
 import 'font-awesome/css/font-awesome.css';
@@ -17,7 +15,6 @@ import Share from './utils/share';
 import '@/styles/global.css';
 
 Vue.prototype.$axios = axios;
-Vue.use(VeeValidate);
 
 //兼容pc
 Adapter.compatiblePC();

@@ -1,12 +1,16 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import hello from '@/components/hello';
-import about from '@/components/about';
+import hello from '@/page/hello';
+import about from '@/page/about';
+import form from '@/page/form';
+import upload from '@/page/upload';
+import share from '@/page/share';
+
 import button from '@/components/common/button';
-import form from '@/components/form';
-import upload from '@/components/upload';
-import share from '@/components/share';
+import input from '@/components/common/input';
+import select from '@/components/common/select';
+import calender from '@/components/common/calender';
 
 Vue.use(Router);
 
@@ -15,9 +19,13 @@ export default new Router({
     { path: '/', redirect: '/hello' },
     { path: '/hello', name: 'hello', component: hello },
     { path: '/about', name: 'about', component: about },
-    { path: '/button', name: 'button', component: button },
     { path: '/form', name: 'form', component: form },
     { path: '/upload', name: 'upload', component: upload },
     { path: '/share', name: 'share', component: share },
+
+    { path: '/button', name: 'button', component: button },
+    { path: '/input', name: 'input', component: input },
+    { path: '/select', name: 'select', component: select },
+    { path: '/calender', name: 'calender', component: calender },
   ],
 });
