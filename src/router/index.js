@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import hello from '@/pages/hello';
-import about from '@/pages/about';
-import form from '@/pages/form';
-import form2 from '@/pages/form2';
-import upload from '@/pages/upload';
-import share from '@/pages/share';
+import hello from '@/components/pages/hello';
+import about from '@/components/pages/about';
+import form from '@/components/pages/form';
+import form2 from '@/components/pages/form2';
+import upload from '@/components/pages/upload';
+import share from '@/components/pages/share';
 
 import button from '@/components/common/button';
 import select from '@/components/common/select';
