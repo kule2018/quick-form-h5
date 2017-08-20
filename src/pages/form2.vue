@@ -1,15 +1,16 @@
 <template>
   <div class="form">
     <div class="top">
-      发布寻人
+      <p>*请留下联系方式</p>
+      <p>有任何关于 <span></span> 的消息我们会与你联系</p>
     </div>
-
+    
     <div class="info">
-      <v-input :inputName="userName" ref="userName" v-focus-next-on-enter="'userAge'"></v-input>
+      <v-input :inputName="userName" ref="userName" v-focus-next-on-enter="'mobile'"></v-input>
 
-      <v-input :inputName="userAge" ref="userAge" v-focus-next-on-enter="'submit'"></v-input>
+      <v-input :inputName="mobile" ref="mobile" v-focus-next-on-enter="'submit'"></v-input>
 
-      <input v-on:click="changeRoute('/form2')" class="btn btn-primary bottomBtn" type="button" ref="submit" value="提交">
+      <input v-on:click="changeRoute('/upload')" class="btn btn-primary bottomBtn" type="button" ref="submit" value="提交">
     </div>
 
     <v-toast :visible="showToast" :message="'发布成功'" :className="''" :position="'middle'" :iconClass="'fa fa-check'">
@@ -22,7 +23,7 @@ import Input from '@/components/common/input'
 import Toast from '@/components/common/toast'
 
 export default {
-  name: 'form',
+  name: 'form2',
   data: () => ({
     userName: {
       name: '姓名',
@@ -32,38 +33,14 @@ export default {
       isRequired: true,
       placeholder: '姓名',
     },
-    // password: {
-    //   name: '密码',
-    //   value: '',
-    //   isDanger: 0,
-    //   reg: /^[\w!@#$%^&*.]{6,16}$/,
-    //   isRequired: false,
-    //   placeholder: '密码长度不少于6位',
-    // },
-    userAge: {
-      name: '年龄',
+    mobile: {
+      name: '电话',
       value: '',
       isDanger: 0,
-      reg: /^(\d{1,2})$/,
-      isRequired: false,
-      placeholder: '年龄',
+      reg: /^1[3|4|5|7|8]\d{9}$/,
+      isRequired: true,
+      placeholder: '电话',
     },
-    // mobile: {
-    //   name: '电话',
-    //   value: '',
-    //   isDanger: 0,
-    //   reg: /^1[3|4|5|7|8]\d{9}$/,
-    //   isRequired: true,
-    //   placeholder: '电话',
-    // },
-    // mail: {
-    //   name: '邮箱',
-    //   value: '',
-    //   isDanger: 0,
-    //   reg: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
-    //   isRequired: true,
-    //   placeholder: '邮箱',
-    // },
     showToast: false
   }),
 
@@ -86,7 +63,7 @@ export default {
 
     //路由跳转
     changeRoute: function (ele) {
-      let allForm = [this.userName, this.userAge]
+      let allForm = [this.userName, this.mobile]
       
       //必填的字段
       let isRequired = []
