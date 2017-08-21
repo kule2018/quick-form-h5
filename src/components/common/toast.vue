@@ -90,8 +90,4 @@ export default {
     transform: translate(-50%, 0);
 }
 
-.pop-enter,
-.pop-leave-active {
-    opacity: 0;
-}
 </style>

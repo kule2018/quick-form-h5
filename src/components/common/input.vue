@@ -1,15 +1,16 @@
 <template>
   <label class="label">
-    <span class="requiredSymbol" :class="{'hidden': !inputName.isRequired}">*</span><span>{{inputName.name}}：</span>
+    <span class="requiredSymbol" :class="{'hidden': !props.isRequired}">*</span>
+    <span>{{props.title}}：</span>
     <p class="control has-icon has-icon-right">
       <input type="text"
-        v-model="inputName.value"
-        v-on:blur="checkReg(inputName)"
-        :class="{'input': true, 'is-danger': inputName.isDanger }"
-        :placeholder="inputName.placeholder">
-      <i v-show="inputName.isDanger" class="fa fa-warning"></i>
-      <span v-show="inputName.isDanger == 1" class="help is-danger">{{ '请输入正确的' }}{{inputName.name}}</span>
-      <span v-show="inputName.isDanger == 2" class="help is-danger">{{inputName.name}}{{ '不能为空' }}</span>
+        v-model="props.value"
+        v-on:blur="checkReg(props)"
+        :class="{'input': true, 'is-danger': props.isDanger }"
+        :placeholder="props.placeholder">
+      <i v-show="props.isDanger" class="fa fa-warning"></i>
+      <span v-show="props.isDanger == 1" class="help is-danger">{{ '请输入正确的' }}{{props.title}}</span>
+      <span v-show="props.isDanger == 2" class="help is-danger">{{props.title}}{{ '不能为空' }}</span>
     </p>
   </label>
 </template>
@@ -18,8 +19,8 @@
 export default {
   name: 'input',
   props: {
-    inputName: {
-      name: '',
+    props: {
+      title: '',
       value: '',
       isDanger: 0,
       reg: /^()$/,
@@ -29,12 +30,6 @@ export default {
   },
   
   methods: {
-    //检测非空
-    checkEmpty: function(ele) {
-      ele.isDanger =  ele.value.trim().length > 0 ? ele.isDanger : 2
-      return ele.value.trim().length > 0;
-    },
-
     //检测正则
     checkReg: function(ele) {
       if(ele.value.trim().length == 0) {
@@ -56,7 +51,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .label {
-  margin: 1rem 0 0.5rem 0;
+  margin: 1rem 0;
 }
 
 .label span{

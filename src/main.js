@@ -1,20 +1,18 @@
 import Vue from 'vue';
+import VueResource from 'vue-resource'
 
 import '@/styles/form.css';
 import '@/styles/global.css';
 import 'font-awesome/css/font-awesome.css';
-
-import axios from 'axios';
 
 import App from './App';
 import router from './router';
 import Adapter from './utils/adapter';
 import Share from './utils/share';
 
-
 import '@/styles/global.css';
 
-Vue.prototype.$axios = axios;
+Vue.use(VueResource)
 
 // Register a global custom directive called v-focus-next-on-enter
 Vue.directive('focusNextOnEnter', {

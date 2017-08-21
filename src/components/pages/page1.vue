@@ -1,14 +1,14 @@
 <template>
   <div class="hello">
     <div class="top">
-      <img src="../assets/tnfe.png" />
+      <img src="../../assets/tnfe.png" />
     </div>
     <div class="title">
       <h3>Quick Form H5</h3>
       <p>一个支持突发事件的快速H5模版</p>
     </div>
     <div class="btns">
-      <router-link to="/form">
+      <router-link to="/page2">
         <div class="btn btn-primary">快速上手</div>
       </router-link>
       <div class="btn btn-dashed">
@@ -16,13 +16,13 @@
       </div>
       <div class="tip">
         点击"快速上手"代表同意
-        <router-link to="/about">
+        <router-link to="/page0">
           <span class="tips">《Quick Form H5用户协议》</span>
         </router-link>
       </div>
     </div>
     <div class="tlogo">
-      <img src="../assets/logo.png" />
+      <img src="../../assets/logo.png" />
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'hello',
+  name: 'page1',
   data() {
     return {
     };

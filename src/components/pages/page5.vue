@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     share
-    <router-link to="/hello">
+    <router-link to="/page1">
       <div class="btn">下一页</div>
     </router-link>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'share',
+  name: 'page5',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',

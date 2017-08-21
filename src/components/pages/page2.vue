@@ -5,11 +5,13 @@
     </div>
 
     <div class="info">
-      <v-input :inputName="userName" ref="userName" v-focus-next-on-enter="'userAge'"></v-input>
+      <v-input :props="userName" ref="userName" v-focus-next-on-enter="'userAge'"></v-input>
+      
+      <v-radio :props="userSex"></v-radio>
+      
+      <v-input :props="userAge" ref="userAge" v-focus-next-on-enter="'submit'"></v-input>
 
-      <v-input :inputName="userAge" ref="userAge" v-focus-next-on-enter="'submit'"></v-input>
-
-      <input v-on:click="changeRoute('/form2')" class="btn btn-primary bottomBtn" type="button" ref="submit" value="提交">
+      <input v-on:click="changeRoute('/page3')" class="btn btn-primary bottomBtn" type="button" ref="submit" value="发布">
     </div>
 
     <v-toast :visible="showToast" :message="'发布成功'" :className="''" :position="'middle'" :iconClass="'fa fa-check'">
@@ -20,59 +22,55 @@
 <script>
 import Input from '@/components/common/input'
 import Toast from '@/components/common/toast'
+import Radio from '@/components/common/radio'
+import bus from '@/utils/bus'
 
 export default {
-  name: 'form',
+  name: 'page2',
   data: () => ({
     userName: {
-      name: '姓名',
+      title: '姓名',
       value: '',
       isDanger: 0,
       reg: /^([a-zA-Z0-9\u4e00-\u9fa5\·]{1,10})$/,
       isRequired: true,
       placeholder: '姓名',
     },
-    // password: {
-    //   name: '密码',
-    //   value: '',
-    //   isDanger: 0,
-    //   reg: /^[\w!@#$%^&*.]{6,16}$/,
-    //   isRequired: false,
-    //   placeholder: '密码长度不少于6位',
-    // },
+
     userAge: {
-      name: '年龄',
+      title: '年龄',
       value: '',
       isDanger: 0,
       reg: /^(\d{1,2})$/,
       isRequired: false,
       placeholder: '年龄',
     },
-    // mobile: {
-    //   name: '电话',
-    //   value: '',
-    //   isDanger: 0,
-    //   reg: /^1[3|4|5|7|8]\d{9}$/,
-    //   isRequired: true,
-    //   placeholder: '电话',
-    // },
-    // mail: {
-    //   name: '邮箱',
-    //   value: '',
-    //   isDanger: 0,
-    //   reg: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
-    //   isRequired: true,
-    //   placeholder: '邮箱',
-    // },
-    showToast: false
+
+    userSex: {
+      title: '性别',
+      isDanger: 0,
+      options: [
+        {label: '男', value: 'male', disabled: false},
+        {label: '女', value: 'female', disabled: false},
+      ],
+      value: '',
+      isRequired: true,
+    },
+
+    showToast: false,
+
+    // password.reg: /^[\w!@#$%^&*.]{6,16}$/,
+    // mail.reg: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
   }),
 
   components: {
     'v-input': Input,
     'v-toast': Toast,
+    'v-radio': Radio,
   },
 
   methods: {
+
     //检测非空
     checkEmpty: function (ele) {
       ele.isDanger = ele.value.trim().length > 0 ? ele.isDanger : 2
@@ -86,7 +84,7 @@ export default {
 
     //路由跳转
     changeRoute: function (ele) {
-      let allForm = [this.userName, this.userAge]
+      let allForm = [this.userName, this.userSex, this.userAge]
       
       //必填的字段
       let isRequired = []
@@ -94,6 +92,12 @@ export default {
         if (item.isRequired)
           isRequired = isRequired.concat(item)
       })
+
+      let params = {
+        name: this.userName.value,
+        sex: this.userSex.value,
+        age: this.userAge.value,
+      }
 
       //所有字段无报警
       if (isRequired.every(this.checkEmpty)) {
@@ -103,13 +107,15 @@ export default {
           setTimeout(function () {
             this.showToast = false
             _self.$router.replace({ path: ele })
-          }, 400)
-        } else {
+            setTimeout(function () {
+              bus.$emit('add', params)
+              console.log('aaaa')},200)
+          }, 600)
         }
       }
     },
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
