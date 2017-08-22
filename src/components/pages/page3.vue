@@ -6,9 +6,9 @@
     </div>
     
     <div class="info">
-      <v-input :props="publishName" ref="publishName" v-focus-next-on-enter="'mobile'"></v-input>
+      <v-input :props="publishName" ref="publishName" v-focus-next-on-enter="'publishPhone'"></v-input>
 
-      <v-input :props="mobile" ref="mobile" v-focus-next-on-enter="'submit'"></v-input>
+      <v-input :props="publishPhone" ref="publishPhone" v-focus-next-on-enter="'submit'"></v-input>
 
       <input v-on:click="changeRoute('/page4')" class="btn btn-primary bottomBtn" type="button" ref="submit" value="提交">
     </div>
@@ -34,7 +34,7 @@ export default {
       isRequired: true,
       placeholder: '姓名',
     },
-    mobile: {
+    publishPhone: {
       title: '电话',
       value: '',
       isDanger: 0,
@@ -53,7 +53,7 @@ export default {
   },
 
   created() {
-    bus.$on('add', data => {this.userData = data})
+    bus.$on('page2', data => {this.userData = data})
   },
 
   methods: {
@@ -71,7 +71,7 @@ export default {
 
     //路由跳转
     changeRoute: function (ele) {
-      let allForm = [this.publishName, this.mobile]
+      let allForm = [this.publishName, this.publishPhone]
       
       //必填的字段
       let isRequired = []
@@ -80,39 +80,29 @@ export default {
           isRequired = isRequired.concat(item)
       })
 
-
       //所有字段无报警
       if (isRequired.every(this.checkEmpty)) {
         if (allForm.every(this.checkForm)) {
           this.userData = {
             ...this.userData,
-            'publish_name': this.publishName.value,
-            'publish_phone': this.mobile.value,
+            publish_name: this.publishName.value,
+            publish_phone: this.publishPhone.value,
           }
           this.$http.get('//jiuzhu.qq.com/publish/add',{params: this.userData})
             .then(res => {
               this.userData.id = res.data.data.id
-              console.log(res, this.userData)
+              this.showToast = true
+              let _self = this
+
+              setTimeout(function () {
+                this.showToast = false
+                _self.$router.push({ path: ele })
+                setTimeout(function() {bus.$emit('page3', _self.userData)
+                console.log(_self.userData)},200)
+              }, 600)
             }, err => {
               console.log(err)
             })
-            // this.$http.jsonp('//jiuzhu.qq.com/publish/getinfo',{
-            //   params: params
-            // },{
-            //   jsonp: 'success_jsonpCallback'
-            // }).then(res => {
-              
-            //   this.userData = res.body.data
-            //   console.log(res, this.userData)
-            // }, err => {
-            //   console.log(err)
-            // })
-          this.showToast = true
-          let _self = this
-          setTimeout(function () {
-            this.showToast = false
-            _self.$router.replace({ path: ele })
-          }, 600)
         } else {
         }
       }

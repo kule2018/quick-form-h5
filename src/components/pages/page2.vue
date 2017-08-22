@@ -106,10 +106,8 @@ export default {
           let _self = this
           setTimeout(function () {
             this.showToast = false
-            _self.$router.replace({ path: ele })
-            setTimeout(function () {
-              bus.$emit('add', params)
-              console.log('aaaa')},200)
+            _self.$router.push({ path: ele })
+            setTimeout(function() {bus.$emit('page2', params)},200)
           }, 600)
         }
       }

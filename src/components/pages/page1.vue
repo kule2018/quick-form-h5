@@ -12,7 +12,7 @@
         <div class="btn btn-primary">快速上手</div>
       </router-link>
       <div class="btn btn-dashed">
-        <a href="//github.com/Tnfe">关于我们</a>
+        <a href="//github.com/Tnfe" target="_blank">关于我们</a>
       </div>
       <div class="tip">
         点击"快速上手"代表同意

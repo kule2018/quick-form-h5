@@ -90,7 +90,6 @@
 .textarea.is-active,
 .textarea:active,
 .textarea:focus {
-  border-color: #00d1b2;
   outline: none
 }
 
@@ -307,7 +306,6 @@
 .select select.is-active,
 .select select:active,
 .select select:focus {
-  border-color: #00d1b2;
   outline: none
 }
 
@@ -465,65 +463,45 @@
   margin-top: 0.3rem;
 }
 
-.help.is-white {
+.is-white {
   color: #fff
 }
 
-.help.is-black {
+.is-black {
   color: #0a0a0a
 }
 
-.help.is-light {
+.is-light {
   color: #f5f5f5
 }
 
-.help.is-dark {
+.is-dark {
   color: #363636
 }
 
-.help.is-primary {
+.is-primary {
   color: #00d1b2
 }
 
-.help.is-info {
+.is-info {
   color: #3273dc
 }
 
-.help.is-success {
+.is-success {
   color: #23d160
 }
 
-.help.is-warning {
+.is-warning {
   color: #ffdd57
 }
 
-.help.is-danger {
+.is-danger {
   color: #ff3860
 }
 
 .control{position:relative;text-align:left}
 
 .control:not(:last-child){margin-bottom:10px}
-
-.control.has-addons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
-
-.control.has-addons .button,.control.has-addons .input,.control.has-addons .select{border-radius:0;margin-right:-1px;width:auto}
-
-.control.has-addons .button:hover,.control.has-addons .input:hover,.control.has-addons .select:hover{z-index:2}
-
-.control.has-addons .button:active,.control.has-addons .button:focus,.control.has-addons .input:active,.control.has-addons .input:focus,.control.has-addons .select:active,.control.has-addons .select:focus{z-index:3}
-
-.control.has-addons .button:first-child,.control.has-addons .button:first-child select,.control.has-addons .input:first-child,.control.has-addons .input:first-child select,.control.has-addons .select:first-child,.control.has-addons .select:first-child select{border-radius:3px 0 0 3px}
-
-.control.has-addons .button:last-child,.control.has-addons .button:last-child select,.control.has-addons .input:last-child,.control.has-addons .input:last-child select,.control.has-addons .select:last-child,.control.has-addons .select:last-child select{border-radius:0 3px 3px 0}
-
-.control.has-addons .button.is-expanded,.control.has-addons .input.is-expanded,.control.has-addons .select.is-expanded{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:0;flex-shrink:0}
-
-.control.has-addons.has-addons-centered{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-
-.control.has-addons.has-addons-right{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
-
-.control.has-addons.has-addons-fullwidth .button,.control.has-addons.has-addons-fullwidth .input,.control.has-addons.has-addons-fullwidth .select{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:0;flex-shrink:0}
 
 .control.has-icon>.fa{display:inline-block;font-size:0.6rem;height:0.5rem;line-height:0.5rem;text-align:center;vertical-align:top;width:0.5rem;color:#dbdbdb;pointer-events:none;position:absolute;top:0.6rem;z-index:4}
 
@@ -566,17 +544,3 @@
 .control.has-icon.has-icon-right .input.is-large{padding-right:48px}
 
 .control.has-icon.has-icon-right .input.is-large+.fa{right:12px}
-
-.control.is-grouped{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
-
-.control.is-grouped>.control:not(:last-child){margin-bottom:0;margin-right:10px}
-
-.control.is-grouped>.control.is-expanded{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:0;flex-shrink:0}
-
-.control.is-grouped.is-grouped-centered{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-
-.control.is-grouped.is-grouped-right{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
-
-.control.is-horizontal>.control{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:5;-ms-flex-positive:5;flex-grow:5;-ms-flex-negative:1;flex-shrink:1}
-
-.control.is-loading:after{-webkit-animation:spin-around .5s infinite linear;animation:spin-around .5s infinite linear;border:2px solid #dbdbdb;border-radius:290486px;border-right-color:transparent;border-top-color:transparent;content:"";display:block;height:16px;position:relative;width:16px;position:absolute!important;right:8px;top:8px}

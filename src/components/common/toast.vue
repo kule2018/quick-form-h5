@@ -63,13 +63,20 @@ export default {
     line-height: 0.6rem;
     font-size: 0.6rem;
     padding: 0.5rem 0.6rem;
+    display: flex;
 }
 
-.icon, .text {
-    line-height: 0.6rem;
+.icon,
+.text {
     font-size: 0.6rem;
-    display: inline-block;
-    text-align: center;
+    display: block;
+    text-align: left;
+}
+
+.text {
+    padding-left: 0.2rem;
+    line-height: 0.6rem;
+    flex: 1;
 }
 
 .placetop {
@@ -89,5 +96,4 @@ export default {
     left: 50%;
     transform: translate(-50%, 0);
 }
-
 </style>
