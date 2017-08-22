@@ -74,6 +74,7 @@ export default {
   created() {
     bus.$on('page3', data => {
       this.userData = data
+      this.userData.img_url = data.img_url || '//mat1.gtimg.com/pingjs/js/tnfe/works/jiuxun/images/avator.jpg'
       let sex = this.userData.sex == 'male' ? '男' : '女'
 
       if (this.userData.age.length == 0)
